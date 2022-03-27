@@ -24,12 +24,13 @@ for dict in mapper:
                 'externalId': dict['externalId'], 'createdAt': dict['createdAt']}
         result.append(item)
 
+sorted_result = sorted(result, key=lambda d: d['createdAt'])
 
 with open('./csv/result.csv', 'w', newline='') as csvfile:
     fieldnames = ['internalId', 'externalId', 'createdAt']
     writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
     writer.writeheader()
-    for dict in result:
+    for dict in sorted_result:
         writer.writerow({'internalId': dict['internalId'],
                          'externalId': dict['externalId'], 'createdAt': dict['createdAt']})
 
