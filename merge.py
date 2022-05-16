@@ -2,7 +2,7 @@ import csv
 
 merged = []
 
-for num in range(1, 5):
+for num in range(1, 36):
     print(f'Loading results({str(num)}).csv...')
     with open(f'./csv/results ({str(num)}).csv') as file:
         reader = csv.DictReader(file)
